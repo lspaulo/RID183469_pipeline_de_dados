@@ -1,0 +1,33 @@
+[2025-05-19T01:41:19.246+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: pipeline_dados.upload_raw_data_to_bronze manual__2025-05-19T01:35:56.005769+00:00 [queued]>
+[2025-05-19T01:41:19.261+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: pipeline_dados.upload_raw_data_to_bronze manual__2025-05-19T01:35:56.005769+00:00 [queued]>
+[2025-05-19T01:41:19.261+0000] {taskinstance.py:1361} INFO - Starting attempt 2 of 2
+[2025-05-19T01:41:19.373+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): upload_raw_data_to_bronze> on 2025-05-19 01:35:56.005769+00:00
+[2025-05-19T01:41:19.383+0000] {standard_task_runner.py:57} INFO - Started process 67 to run task
+[2025-05-19T01:41:19.389+0000] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'pipeline_dados', 'upload_raw_data_to_bronze', 'manual__2025-05-19T01:35:56.005769+00:00', '--job-id', '13', '--raw', '--subdir', 'DAGS_FOLDER/dag_pipeline_dados.py', '--cfg-path', '/tmp/tmpe0s5z0m8']
+[2025-05-19T01:41:19.391+0000] {standard_task_runner.py:85} INFO - Job 13: Subtask upload_raw_data_to_bronze
+[2025-05-19T01:41:19.601+0000] {task_command.py:415} INFO - Running <TaskInstance: pipeline_dados.upload_raw_data_to_bronze manual__2025-05-19T01:35:56.005769+00:00 [running]> on host d9fbdfb579ba
+[2025-05-19T01:41:20.873+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='pipeline_dados' AIRFLOW_CTX_TASK_ID='upload_raw_data_to_bronze' AIRFLOW_CTX_EXECUTION_DATE='2025-05-19T01:35:56.005769+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-05-19T01:35:56.005769+00:00'
+[2025-05-19T01:41:20.875+0000] {logging_mixin.py:151} INFO - Erro ao carregar os dados brutos: [Errno 2] No such file or directory: '/opt/airflow/data/raw/draw_data.csv'
+[2025-05-19T01:41:20.875+0000] {taskinstance.py:1943} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 192, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 209, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/dag_pipeline_dados.py", line 36, in upload_raw_data_to_bronze
+    df = pd.read_csv(input_path)
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/io/parsers/readers.py", line 912, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/io/parsers/readers.py", line 577, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/io/parsers/readers.py", line 1407, in __init__
+    self._engine = self._make_engine(f, self.engine)
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/io/parsers/readers.py", line 1661, in _make_engine
+    self.handles = get_handle(
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/io/common.py", line 859, in get_handle
+    handle = open(
+FileNotFoundError: [Errno 2] No such file or directory: '/opt/airflow/data/raw/draw_data.csv'
+[2025-05-19T01:41:20.899+0000] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=pipeline_dados, task_id=upload_raw_data_to_bronze, execution_date=20250519T013556, start_date=20250519T014119, end_date=20250519T014120
+[2025-05-19T01:41:21.059+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 13 for task upload_raw_data_to_bronze ([Errno 2] No such file or directory: '/opt/airflow/data/raw/draw_data.csv'; 67)
+[2025-05-19T01:41:21.088+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2025-05-19T01:41:21.131+0000] {taskinstance.py:2784} INFO - 0 downstream tasks scheduled from follow-on schedule check

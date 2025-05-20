@@ -1,0 +1,14 @@
+[2025-05-19T01:55:54.517+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: pipeline_dados.upload_raw_data_to_bronze manual__2025-05-19T01:50:31.194822+00:00 [queued]>
+[2025-05-19T01:55:54.535+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: pipeline_dados.upload_raw_data_to_bronze manual__2025-05-19T01:50:31.194822+00:00 [queued]>
+[2025-05-19T01:55:54.536+0000] {taskinstance.py:1361} INFO - Starting attempt 2 of 2
+[2025-05-19T01:55:54.672+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): upload_raw_data_to_bronze> on 2025-05-19 01:50:31.194822+00:00
+[2025-05-19T01:55:54.680+0000] {standard_task_runner.py:57} INFO - Started process 78 to run task
+[2025-05-19T01:55:54.687+0000] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'pipeline_dados', 'upload_raw_data_to_bronze', 'manual__2025-05-19T01:50:31.194822+00:00', '--job-id', '18', '--raw', '--subdir', 'DAGS_FOLDER/dag_pipeline_dados.py', '--cfg-path', '/tmp/tmp1imr6d6v']
+[2025-05-19T01:55:54.689+0000] {standard_task_runner.py:85} INFO - Job 18: Subtask upload_raw_data_to_bronze
+[2025-05-19T01:55:54.921+0000] {task_command.py:415} INFO - Running <TaskInstance: pipeline_dados.upload_raw_data_to_bronze manual__2025-05-19T01:50:31.194822+00:00 [running]> on host 0de3cb0d0b9b
+[2025-05-19T01:55:55.875+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='pipeline_dados' AIRFLOW_CTX_TASK_ID='upload_raw_data_to_bronze' AIRFLOW_CTX_EXECUTION_DATE='2025-05-19T01:50:31.194822+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-05-19T01:50:31.194822+00:00'
+[2025-05-19T01:55:56.874+0000] {logging_mixin.py:151} INFO - Dados brutos carregados e salvos em /opt/airflow/data/bronze/dados_bronze.csv
+[2025-05-19T01:55:56.887+0000] {python.py:194} INFO - Done. Returned value was: None
+[2025-05-19T01:55:56.899+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=pipeline_dados, task_id=upload_raw_data_to_bronze, execution_date=20250519T015031, start_date=20250519T015554, end_date=20250519T015556
+[2025-05-19T01:55:57.148+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2025-05-19T01:55:57.309+0000] {taskinstance.py:2784} INFO - 1 downstream tasks scheduled from follow-on schedule check

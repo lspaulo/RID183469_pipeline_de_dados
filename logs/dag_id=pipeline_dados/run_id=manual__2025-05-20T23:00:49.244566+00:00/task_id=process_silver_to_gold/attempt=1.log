@@ -1,0 +1,24 @@
+[2025-05-20T23:01:30.663+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: pipeline_dados.process_silver_to_gold manual__2025-05-20T23:00:49.244566+00:00 [queued]>
+[2025-05-20T23:01:30.683+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: pipeline_dados.process_silver_to_gold manual__2025-05-20T23:00:49.244566+00:00 [queued]>
+[2025-05-20T23:01:30.684+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 2
+[2025-05-20T23:01:30.822+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): process_silver_to_gold> on 2025-05-20 23:00:49.244566+00:00
+[2025-05-20T23:01:30.834+0000] {standard_task_runner.py:57} INFO - Started process 65 to run task
+[2025-05-20T23:01:30.839+0000] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'pipeline_dados', 'process_silver_to_gold', 'manual__2025-05-20T23:00:49.244566+00:00', '--job-id', '48', '--raw', '--subdir', 'DAGS_FOLDER/dag_pipeline_dados.py', '--cfg-path', '/tmp/tmp4z9utpo5']
+[2025-05-20T23:01:30.842+0000] {standard_task_runner.py:85} INFO - Job 48: Subtask process_silver_to_gold
+[2025-05-20T23:01:31.062+0000] {task_command.py:415} INFO - Running <TaskInstance: pipeline_dados.process_silver_to_gold manual__2025-05-20T23:00:49.244566+00:00 [running]> on host 3041e8c3efe8
+[2025-05-20T23:01:32.368+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='pipeline_dados' AIRFLOW_CTX_TASK_ID='process_silver_to_gold' AIRFLOW_CTX_EXECUTION_DATE='2025-05-20T23:00:49.244566+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-05-20T23:00:49.244566+00:00'
+[2025-05-20T23:01:32.525+0000] {dag_pipeline_dados.py:209} INFO - Dados da camada Prata carregados com sucesso.
+[2025-05-20T23:01:32.534+0000] {dag_pipeline_dados.py:224} INFO - Faixas etárias criadas com sucesso.
+[2025-05-20T23:01:32.551+0000] {dag_pipeline_dados.py:228} INFO - Dados agregados por faixa etária e status.
+[2025-05-20T23:01:32.554+0000] {dag_pipeline_dados.py:234} INFO - 💾 Dados salvos na Gold | Registros: 20
+[2025-05-20T23:01:32.554+0000] {dag_pipeline_dados.py:235} INFO - 📁 Local: /opt/airflow/data/gold/dados_gold.csv
+[2025-05-20T23:01:32.558+0000] {dag_pipeline_dados.py:236} INFO - 🔎 Amostra final:
+|    | age_range   | subscription_status   |   user_count |
+|---:|:------------|:----------------------|-------------:|
+|  0 | 0-10        | active                |            0 |
+|  1 | 0-10        | inactive              |            0 |
+|  2 | 11-20       | active                |          616 |
+[2025-05-20T23:01:32.564+0000] {python.py:194} INFO - Done. Returned value was: Transformações para a camada Ouro concluídas
+[2025-05-20T23:01:32.793+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=pipeline_dados, task_id=process_silver_to_gold, execution_date=20250520T230049, start_date=20250520T230130, end_date=20250520T230132
+[2025-05-20T23:01:33.019+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2025-05-20T23:01:33.052+0000] {taskinstance.py:2784} INFO - 0 downstream tasks scheduled from follow-on schedule check

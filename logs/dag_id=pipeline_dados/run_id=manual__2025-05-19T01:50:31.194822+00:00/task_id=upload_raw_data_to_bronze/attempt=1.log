@@ -1,0 +1,31 @@
+[2025-05-19T01:50:43.995+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: pipeline_dados.upload_raw_data_to_bronze manual__2025-05-19T01:50:31.194822+00:00 [queued]>
+[2025-05-19T01:50:44.008+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: pipeline_dados.upload_raw_data_to_bronze manual__2025-05-19T01:50:31.194822+00:00 [queued]>
+[2025-05-19T01:50:44.009+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 2
+[2025-05-19T01:50:44.164+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): upload_raw_data_to_bronze> on 2025-05-19 01:50:31.194822+00:00
+[2025-05-19T01:50:44.172+0000] {standard_task_runner.py:57} INFO - Started process 51 to run task
+[2025-05-19T01:50:44.177+0000] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'pipeline_dados', 'upload_raw_data_to_bronze', 'manual__2025-05-19T01:50:31.194822+00:00', '--job-id', '17', '--raw', '--subdir', 'DAGS_FOLDER/dag_pipeline_dados.py', '--cfg-path', '/tmp/tmpyojesb5t']
+[2025-05-19T01:50:44.179+0000] {standard_task_runner.py:85} INFO - Job 17: Subtask upload_raw_data_to_bronze
+[2025-05-19T01:50:44.434+0000] {task_command.py:415} INFO - Running <TaskInstance: pipeline_dados.upload_raw_data_to_bronze manual__2025-05-19T01:50:31.194822+00:00 [running]> on host 0de3cb0d0b9b
+[2025-05-19T01:50:46.212+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='pipeline_dados' AIRFLOW_CTX_TASK_ID='upload_raw_data_to_bronze' AIRFLOW_CTX_EXECUTION_DATE='2025-05-19T01:50:31.194822+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-05-19T01:50:31.194822+00:00'
+[2025-05-19T01:50:46.681+0000] {logging_mixin.py:151} INFO - Erro ao carregar os dados brutos: [Errno 13] Permission denied: '/opt/airflow/data/bronze/dados_bronze.csv'
+[2025-05-19T01:50:46.682+0000] {taskinstance.py:1943} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 192, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 209, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/dag_pipeline_dados.py", line 40, in upload_raw_data_to_bronze
+    df.to_csv(output_path, index=False)
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/core/generic.py", line 3772, in to_csv
+    return DataFrameRenderer(formatter).to_csv(
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/io/formats/format.py", line 1186, in to_csv
+    csv_formatter.save()
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/io/formats/csvs.py", line 240, in save
+    with get_handle(
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/io/common.py", line 859, in get_handle
+    handle = open(
+PermissionError: [Errno 13] Permission denied: '/opt/airflow/data/bronze/dados_bronze.csv'
+[2025-05-19T01:50:46.868+0000] {taskinstance.py:1400} INFO - Marking task as UP_FOR_RETRY. dag_id=pipeline_dados, task_id=upload_raw_data_to_bronze, execution_date=20250519T015031, start_date=20250519T015043, end_date=20250519T015046
+[2025-05-19T01:50:47.181+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 17 for task upload_raw_data_to_bronze ([Errno 13] Permission denied: '/opt/airflow/data/bronze/dados_bronze.csv'; 51)
+[2025-05-19T01:50:47.251+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2025-05-19T01:50:47.295+0000] {taskinstance.py:2784} INFO - 0 downstream tasks scheduled from follow-on schedule check

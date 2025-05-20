@@ -1,0 +1,42 @@
+version: "3.8"
+services:
+  airflow-webserver:
+    build: .
+    restart: always
+    user: "1000:0"
+    environment:
+      - LOAD_EX=n
+      - EXECUTOR=Local
+      - AIRFLOW__WEBSERVER__WEB_SERVER_HOST=0.0.0.0
+      - AIRFLOW_UID=1000  # Seu UID
+      - AIRFLOW_GID=0     # GID deve ser 0
+    volumes:
+      - ./dags:/opt/airflow/dags
+      - ./logs:/opt/airflow/logs
+      - ./plugins:/opt/airflow/plugins
+      - ./airflow_home:/opt/airflow
+      - ./data:/opt/airflow/data 
+      - ./tmp:/opt/airflow/tmp
+    ports:
+      - "8081:8080"
+    command: webserver
+
+  airflow-scheduler:
+    build: .
+    restart: always
+    user: "1000:0"
+    environment:
+      - LOAD_EX=n
+      - EXECUTOR=Local
+      - AIRFLOW_UID=1000
+      - AIRFLOW_GID=0
+    volumes:
+      - ./dags:/opt/airflow/dags
+      - ./logs:/opt/airflow/logs
+      - ./plugins:/opt/airflow/plugins
+      - ./airflow_home:/opt/airflow
+      - ./data:/opt/airflow/data 
+      - ./tmp:/opt/airflow/tmp
+    command: scheduler
+
+
