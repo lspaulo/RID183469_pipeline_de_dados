@@ -43,25 +43,25 @@ docker-compose up -d
 
 ## 🏗 Estrutura do Projeto
 
-- 📁 **AIRFLOW-PROJECT/**
-  - 📁 `.venv/` - _Ambiente virtual Python_
-  - 📁 `airflow_home/` - _Configurações do Airflow_
-  - 📁 `assets/` - _Arquivos estáticos (imagens, etc.)_
-  - 📁 `dags/` - _DAGs do Airflow_
-    - 📄 `dag_pipeline_dados.py` - _Pipeline principal Bronze→Silver→Gold_
-  - 📁 `data/` - _Camadas de dados_
-    - 📁 `raw/` - _Dados brutos originais_
-      - 📄 `raw_data.csv`
-    - 📁 `bronze/` - _Dados brutos limpos_
-      - 📄 `dados_bronze.csv`
-    - 📁 `silver/` - _Dados transformados_
-      - 📄 `dados_silver.csv_
-    - 📁 `gold/` - _Dados agregados_
-      - 📄 `dados_gold.csv_
-  - 📁 `logs/` - _Logs de execução_
-  - 📁 `plugins/` - _Plugins customizados_
-  - 📁 `tmp/` - _Arquivos temporários_
-  - 📄 `docker-compose.yml` - _Orquestração de containers_
-  - 📄 `Dockerfile` - _Configuração do container_
-  - 📄 `.env` - _Variáveis de ambiente_
-  - 📄 `README.md` - _Documentação do projeto_
+AIRFLOW-PROJECT/
+├── .venv/               # Ambiente virtual Python
+├── airflow_home/        # Configurações do Airflow
+├── assets/              # Arquivos estáticos
+├── dags/
+│   └── dag_pipeline_dados.py  # Pipeline principal
+├── data/
+│   ├── raw/            # Dados brutos
+│   │   └── raw_data.csv
+│   ├── bronze/         # Dados limpos
+│   │   └── dados_bronze.csv
+│   ├── silver/         # Dados transformados
+│   │   └── dados_silver.csv
+│   └── gold/           # Dados agregados
+│       └── dados_gold.csv
+├── logs/               # Logs de execução
+├── plugins/            # Plugins customizados
+├── tmp/                # Arquivos temporários
+├── docker-compose.yml  # Configuração Docker
+├── Dockerfile          # Imagem Docker
+├── .env                # Variáveis de ambiente
+└── README.md           # Documentação
