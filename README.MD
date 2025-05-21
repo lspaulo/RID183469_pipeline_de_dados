@@ -1,4 +1,3 @@
-```markdown
 # 🚀 Pipeline de Dados - Bronze, Silver e Gold
 
 <p align="center">
@@ -85,5 +84,4 @@ docker-compose up -d
 # Credenciais padrão:
 # Usuário: airflow
 # Senha: airflow
-```
 
