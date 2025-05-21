@@ -2,11 +2,6 @@
   <img src="assets/images/capa.png" alt="Capa do Projeto - Pipeline de Dados" width="100%">
 </p>
 
-# 🚀 Pipeline de Dados - Bronze, Silver e Gold
-
-<p align="center">
-  <img src="assets/pipeline_diagram.png" alt="Diagrama do Pipeline de Dados" width="600">
-</p>
 
 ![Badge Concluído](https://img.shields.io/badge/STATUS-CONCLU%C3%8DDO-success?style=for-the-badge&color=4CAF50)
 ![Airflow](https://img.shields.io/badge/Apache%20Airflow-017CEE?style=for-the-badge&logo=Apache%20Airflow&logoColor=white)
