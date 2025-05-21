@@ -70,7 +70,7 @@ graph TD
 ### - Python 3.8+
 
 ## Clone o repositório
-- git clone [URL_DO_REPOSITÓRIO]
+- git clone [[URL_DO_REPOSITÓRIO](https://github.com/lspaulo/RID183469_pipeline_de_dados.git)]
 
 ## Navegue até a pasta do projeto
 - cd AIRFLOW-PROJECT
