@@ -4,6 +4,43 @@
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![Pandas](https://img.shields.io/badge/Pandas-2C2D72?style=for-the-badge&logo=pandas&logoColor=white)
 
+
+## 🚀 Sobre o Projeto
+
+Pipeline de dados em 3 camadas desenvolvido como desafio final do curso de Engenheiro de Dados da Escola DNC.
+
+## 🔧 Funcionalidades
+
+### 1️⃣ Camada Bronze
+- ✅ Upload de dados brutos
+- 📊 Log de estatísticas
+- 💾 Armazenamento inicial
+
+### 2️⃣ Camada Silver
+- 🧼 Limpeza de dados
+- ✉️ Validação de emails
+- 📅 Correção de datas
+- 🧮 Cálculo de idades
+
+### 3️⃣ Camada Gold
+- 📊 Agregação de dados
+- 🗂️ Criação de faixas etárias
+- 📈 Métricas analíticas
+
+## ⚙️ Configuração
+
+### Pré-requisitos
+- Docker
+- Docker Compose
+- Python 3.8+
+
+```bash
+# Clone o repositório
+git clone [URL_DO_REPO]
+
+# Inicie os containers
+docker-compose up -d
+
 ## 🏗 Estrutura do Projeto
 
 - 📁 **AIRFLOW-PROJECT/**
