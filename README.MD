@@ -61,3 +61,12 @@ graph TD
     A[📥 RAW: raw_data.csv] -->|Upload| B[🟤 Bronze: dados_bronze.csv]
     B -->|Limpeza e Validação| C[⚪ Silver: dados_silver.csv]
     C -->|Agregação| D[🟡 Gold: dados_gold.csv]
+
+⚙️ Como Executar
+Pré-requisitos:
+
+Docker e Docker Compose instalados
+
+Python 3.8+
+
+Passos:
