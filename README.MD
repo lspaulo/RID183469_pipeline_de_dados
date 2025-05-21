@@ -1,67 +1,63 @@
-# 📊 Pipeline de Dados - Bronze, Silver e Gold
+# 🚀 Pipeline de Dados - Bronze, Silver e Gold
 
+<p align="center">
+  <img src="assets/pipeline_diagram.png" alt="Diagrama do Pipeline de Dados" width="600">
+</p>
+
+![Badge Concluído](https://img.shields.io/badge/STATUS-CONCLU%C3%8DDO-success?style=for-the-badge&color=4CAF50)
 ![Airflow](https://img.shields.io/badge/Apache%20Airflow-017CEE?style=for-the-badge&logo=Apache%20Airflow&logoColor=white)
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![Pandas](https://img.shields.io/badge/Pandas-2C2D72?style=for-the-badge&logo=pandas&logoColor=white)
 
+## 📌 Visão Geral
 
-## 🚀 Sobre o Projeto
+Pipeline de dados implementando um fluxo ELT (Extract, Load, Transform) com:
+- Extração de dados brutos (RAW)
+- Processamento para camada Bronze (dados crus)
+- Transformação para camada Silver (dados limpos e tratados)
+- Agregações para camada Gold (dados analíticos)
 
-Pipeline de dados em 3 camadas desenvolvido como desafio final do curso de Engenheiro de Dados da Escola DNC.
+## 📋 Funcionalidades
 
-## 🔧 Funcionalidades
+- `Extração`: Carrega dados CSV para a camada Bronze
+- `Transformação Bronze→Silver`:
+  - Validação de emails
+  - Correção de datas de nascimento
+  - Cálculo de idades
+- `Transformação Silver→Gold`:
+  - Criação de faixas etárias
+  - Agregação por status de assinatura
 
-### 1️⃣ Camada Bronze
-- ✅ Upload de dados brutos
-- 📊 Log de estatísticas
-- 💾 Armazenamento inicial
+## 🛠 Tecnologias Utilizadas
 
-### 2️⃣ Camada Silver
-- 🧼 Limpeza de dados
-- ✉️ Validação de emails
-- 📅 Correção de datas
-- 🧮 Cálculo de idades
-
-### 3️⃣ Camada Gold
-- 📊 Agregação de dados
-- 🗂️ Criação de faixas etárias
-- 📈 Métricas analíticas
-
-## ⚙️ Configuração
-
-### Pré-requisitos
-- Docker
-- Docker Compose
-- Python 3.8+
-
-```bash
-# Clone o repositório
-git clone [URL_DO_REPO]
-
-# Inicie os containers
-docker-compose up -d
+- **Apache Airflow**: Orquestração do pipeline
+- **Pandas**: Processamento de dados
+- **Python 3.8+**: Linguagem principal
+- **Docker**: Containerização do ambiente
 
 ## 🏗 Estrutura do Projeto
 
 - 📁 **AIRFLOW-PROJECT/**
-  - 📁 `.venv/` - _Ambiente virtual Python_
   - 📁 `airflow_home/` - _Configurações do Airflow_
-  - 📁 `assets/` - _Arquivos estáticos (imagens, etc.)_
   - 📁 `dags/` - _DAGs do Airflow_
-    - 📄 `dag_pipeline_dados.py` - _Pipeline principal Bronze→Silver→Gold_
+    - 📄 `dag_pipeline_dados.py` - _Pipeline principal_
   - 📁 `data/` - _Camadas de dados_
-    - 📁 `raw/` - _Dados brutos originais_
+    - 📁 `raw/` - _Dados brutos_
       - 📄 `raw_data.csv`
-    - 📁 `bronze/` - _Dados brutos limpos_
+    - 📁 `bronze/` - _Dados crus_
       - 📄 `dados_bronze.csv`
-    - 📁 `silver/` - _Dados transformados_
-      - 📄 `dados_silver.csv_
-    - 📁 `gold/` - _Dados agregados_
+    - 📁 `silver/` - _Dados tratados_
+      - 📄 `dados_silver.csv`
+    - 📁 `gold/` - _Dados analíticos_
       - 📄 `dados_gold.csv_
   - 📁 `logs/` - _Logs de execução_
-  - 📁 `plugins/` - _Plugins customizados_
-  - 📁 `tmp/` - _Arquivos temporários_
-  - 📄 `docker-compose.yml` - _Orquestração de containers_
-  - 📄 `Dockerfile` - _Configuração do container_
+  - 📄 `docker-compose.yml` - _Configuração do Docker_
   - 📄 `.env` - _Variáveis de ambiente_
-  - 📄 `README.md` - _Documentação do projeto_
+
+## 📊 Diagrama de Fluxo
+
+```mermaid
+graph TD
+    A[📥 RAW: raw_data.csv] -->|Upload| B[🟤 Bronze: dados_bronze.csv]
+    B -->|Limpeza e Validação| C[⚪ Silver: dados_silver.csv]
+    C -->|Agregação| D[🟡 Gold: dados_gold.csv]
