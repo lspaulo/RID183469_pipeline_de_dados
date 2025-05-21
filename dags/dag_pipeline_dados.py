@@ -12,17 +12,16 @@ from airflow.models import TaskInstance
 default_args = {
     'owner': 'airflow',
     'depends_on_past': False,
-    'start_date': days_ago(1),  # ajusta a data de início conforme necessário
+    'start_date': days_ago(1),
     'retries': 1,
 }
 
-# Criação do DAG com definição de schedule e sem "catchup"
+# Criação do DAG 
 with DAG(
     'pipeline_dados',
     default_args=default_args,
     description='Pipeline de dados: do carregamento à transformação final',
-    schedule_interval='@daily',  # ou ajuste o intervalo conforme sua necessidade
-    catchup=False,
+    schedule_interval='@daily',
     tags=['pipeline', 'dados']
 ) as dag:
 
