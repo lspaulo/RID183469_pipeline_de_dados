@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/images/capa.png" alt="Capa do Projeto - Pipeline de Dados" width="100%">
+</p>
+
 # 🚀 Pipeline de Dados - Bronze, Silver e Gold
 
 <p align="center">
