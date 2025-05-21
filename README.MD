@@ -70,18 +70,18 @@ graph TD
 ### - Python 3.8+
 
 ## Clone o repositório
-git clone [URL_DO_REPOSITÓRIO]
+- git clone [URL_DO_REPOSITÓRIO]
 
 ## Navegue até a pasta do projeto
-cd AIRFLOW-PROJECT
+- cd AIRFLOW-PROJECT
 
 ## Inicie os containers
-docker-compose up -d
+- docker-compose up -d
 
 ## Acesse o Airflow no navegador
-URL: http://localhost:8080
+- URL: http://localhost:8080
 
 ## Credenciais padrão:
-Usuário: airflow
-Senha: airflow
+- Usuário: airflow
+- Senha: airflow
 
