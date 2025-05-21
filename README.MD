@@ -1,3 +1,4 @@
+```markdown
 # 🚀 Pipeline de Dados - Bronze, Silver e Gold
 
 <p align="center">
@@ -49,7 +50,7 @@ Pipeline de dados implementando um fluxo ELT (Extract, Load, Transform) com:
     - 📁 `silver/` - _Dados tratados_
       - 📄 `dados_silver.csv`
     - 📁 `gold/` - _Dados analíticos_
-      - 📄 `dados_gold.csv_
+      - 📄 `dados_gold.csv`
   - 📁 `logs/` - _Logs de execução_
   - 📄 `docker-compose.yml` - _Configuração do Docker_
   - 📄 `.env` - _Variáveis de ambiente_
@@ -61,3 +62,28 @@ graph TD
     A[📥 RAW: raw_data.csv] -->|Upload| B[🟤 Bronze: dados_bronze.csv]
     B -->|Limpeza e Validação| C[⚪ Silver: dados_silver.csv]
     C -->|Agregação| D[🟡 Gold: dados_gold.csv]
+```
+
+## ⚙️ Como Executar
+
+# Pré-requisitos:
+# - Docker e Docker Compose instalados
+# - Python 3.8+
+
+# Clone o repositório
+git clone [URL_DO_REPOSITÓRIO]
+
+# Navegue até a pasta do projeto
+cd AIRFLOW-PROJECT
+
+# Inicie os containers
+docker-compose up -d
+
+# Acesse o Airflow no navegador
+# URL: http://localhost:8080
+
+# Credenciais padrão:
+# Usuário: airflow
+# Senha: airflow
+```
+
