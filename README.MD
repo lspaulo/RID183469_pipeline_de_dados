@@ -65,23 +65,23 @@ graph TD
 
 ## ⚙️ Como Executar
 
-# Pré-requisitos:
-# - Docker e Docker Compose instalados
-# - Python 3.8+
+## Pré-requisitos:
+### - Docker e Docker Compose instalados
+### - Python 3.8+
 
-# Clone o repositório
+## Clone o repositório
 git clone [URL_DO_REPOSITÓRIO]
 
-# Navegue até a pasta do projeto
+## Navegue até a pasta do projeto
 cd AIRFLOW-PROJECT
 
-# Inicie os containers
+## Inicie os containers
 docker-compose up -d
 
-# Acesse o Airflow no navegador
-# URL: http://localhost:8080
+## Acesse o Airflow no navegador
+URL: http://localhost:8080
 
-# Credenciais padrão:
-# Usuário: airflow
-# Senha: airflow
+## Credenciais padrão:
+Usuário: airflow
+Senha: airflow
 
